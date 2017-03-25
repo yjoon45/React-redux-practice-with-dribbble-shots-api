@@ -5,7 +5,7 @@ export const shot = (state = {}, action) => {
     }
     default: return state;
   }
-}
+};
 
 export const shots = (state = [], action) => {
   switch (action.type) {
@@ -17,7 +17,7 @@ export const shots = (state = [], action) => {
     }
     default: return state;
   }
-}
+};
 
 export const isLoading = (state = false, action) => {
   switch (action.type) {
@@ -26,7 +26,7 @@ export const isLoading = (state = false, action) => {
     }
     default: return state;
   }
-}
+};
 
 export const isError = (state = false, action) => {
   switch (action.type) {
@@ -35,4 +35,4 @@ export const isError = (state = false, action) => {
     }
     default: return state;
   }
-}
+};

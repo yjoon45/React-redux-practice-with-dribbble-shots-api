@@ -41,5 +41,5 @@ export function fetchShotsByQueryAPI (q) {
   return dispatch => {
     dispatch(fetchShotsReset());
     requestShots(dispatch, url);
-  }
+  };
 }

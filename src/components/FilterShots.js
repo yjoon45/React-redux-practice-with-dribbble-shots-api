@@ -27,6 +27,6 @@ const FilterShots = ({ sortShots, location }) => {
       </ul>
     </div>
   );
-}
+};
 
 export default FilterShots;

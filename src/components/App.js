@@ -1,15 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { fetchShotsAPI } from '../utils';
-import { fetchShot } from '../actions';
+import FilterShots from '../containers/FilterShots';
 import Shot from './Shot';
-import FilterShots from './FilterShots';
-
-const mapStateToProps = ({ shots, isLoading, isError }) => ({ shots, isLoading, isError });
-
-const mapDispatchToProps = dispatch => ({
-  fetchShots: (q = '') => dispatch(fetchShotsAPI(q))
-});
 
 class App extends Component {
   componentDidMount () {
@@ -18,7 +9,7 @@ class App extends Component {
     const sort = params.get('sort');
     !shots.length && sort ? fetchShots(`sort=${sort}`) : fetchShots();
   }
-  
+
   render () {
     const { shots, isLoading, isError } = this.props;
     const params = new URLSearchParams(this.props.location.search);
@@ -26,7 +17,7 @@ class App extends Component {
     let loading = '';
     if (isLoading || !shots.length) loading = <p className="lead text-center">Loading...</p>;
     if (isError) loading = <p className="lead text-center">Something went wrong!</p>;
-    
+
     return (
       <div className="container-fluid card-wrapper">
         <FilterShots />
@@ -42,4 +33,4 @@ class App extends Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;

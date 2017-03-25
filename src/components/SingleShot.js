@@ -1,19 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { fetchShot } from '../actions';
-import { fetchShotAPI } from '../utils';
 import { Link } from 'react-router-dom';
-
-const mapStateToProps = ({ shot, isLoading, isError }) => ({
-  shot,
-  isLoading,
-  isError
-});
-
-const mapDispatchToProps = dispatch => ({
-  fetchShot: id => dispatch(fetchShotAPI(id)),
-  resetShot: () => dispatch(fetchShot({}))
-});
 
 class SingleShot extends Component {
   componentDidMount () {
@@ -74,4 +60,4 @@ class SingleShot extends Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SingleShot);
+export default SingleShot;

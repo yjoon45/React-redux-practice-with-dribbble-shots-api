@@ -1,16 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { fetchShotsByQueryAPI } from '../utils';
-
-const mapStateToProps = ({ router: { location } }) => ({ location });
-
-const mapDispatchToProps = dispatch => ({
-  sortShots: q => dispatch(fetchShotsByQueryAPI(q))
-});
-
-const FilterShots = ({ sortShots, location}) => {
+const FilterShots = ({ sortShots, location }) => {
   const params = new URLSearchParams(location.search);
   const filters = [
     {key: '', name: 'Popular'},
@@ -38,4 +29,4 @@ const FilterShots = ({ sortShots, location}) => {
   );
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(FilterShots);
+export default FilterShots;

@@ -11,8 +11,8 @@ import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-ro
 import * as reducers from './reducers';
 reducers.router = routerReducer;
 
-import App from './components/App';
-import SingleShot from './components/SingleShot';
+import App from './containers/App';
+import SingleShot from './containers/SingleShot';
 
 const history = createHistory();
 const middleware = routerMiddleware(history);

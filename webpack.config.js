@@ -1,12 +1,14 @@
 const webpack = require('webpack');
 const { resolve } = require('path');
 
+process.noDeprecation = true;
+
 module.exports = {
   context: resolve(__dirname, 'src'),
   entry: './app.js',
   devtool: 'sourcemap',
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
